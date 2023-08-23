@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form action="{% url 'updatereport' %}#about" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-secondary table-striped" style="width:600px; " align="center">
+    <tr>
+      <td>work</td>
+      <td><label>
+        <select name="select">
+          {% for i in val1 %}
+          <option value="{{i.id}}" {% if val.id == i.id %} selected {% endif %}>{{i.wid.work}}</option>
+          {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Report</td>
+      <td><label>
+        <input type="file" name="file" /><img src="../media/{{val.report}}" width="100" height="100">
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit2" value="update" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

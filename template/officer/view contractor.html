@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title></head>-->
+{% extends 'officerindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-dark table-striped">
+    <tr>
+      <th width="48" scope="row">contract_company</th>
+      <td width="65"><strong>Address</strong></td>
+      <td width="78"><strong>Phone no: </strong></td>
+      <td width="45"><strong>Email</strong></td>
+
+      <td width="45">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i.name}}</th>
+      <td>{{i.place}}<br>{{i.postoffice}}<br>&nbsp;{{i.district}}</td>
+      <td>{{i.phoneno}}&nbsp;</td>
+      <td>{{i.email}}</td>
+
+      <td><a href="{% url 'instruction1' id=i.id %}#about" class="btn btn-secondary">Add instructions</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

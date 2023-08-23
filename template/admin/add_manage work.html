@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title></head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addwork#about">
+  <table width="300" border="2"class="table table-dark table-striped">
+    <tr>
+      <td>Work</td>
+      <td><strong>Description</strong></td>
+            <td><strong>Area of construction</strong></td>
+            <td><strong>Type</strong></td>
+
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.work}}</td>
+      <td><label>{{i.description}}</label></td>
+            <td><label>{{i.area}}</label></td>
+            <td><label>{{i.type}}</label></td>
+
+      <td><p><a href="{% url 'editwork' id=i.id %}#about" class="btn btn-secondary">Edit</a></p>
+      <p><a href="{% url 'deletework' id=i.id %}#about" class="btn btn-light">delete</a></p></td>
+    </tr>
+     {% endfor %}
+    <tr align="center">
+      <th colspan="5" scope="row"><input type="submit" name="Submit" value="Add"class="btn btn-warning" /></th>
+    </tr>
+  </table>
+</form>
+
+</body>
+<!--</html>-->
+{% endblock %}

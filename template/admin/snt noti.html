@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'notifications' %}#about">
+  <table width="300" border="2" class="table table-dark table-striped"style="width:600px;" align="center">
+    <tr>
+      <th width="113" scope="row">notification</th>
+      <td width="169"><input type="text" name="textfield" class="form-control" required /></td>
+    </tr>
+
+    <tr>
+      <th colspan="2" scope="row">
+        
+        <div align="center"><strong>
+          <input type="submit" name="Submit" value="add" class="btn btn-warning"/>
+        </strong></div></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

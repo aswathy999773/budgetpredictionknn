@@ -1,0 +1,40 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'request' %}#about">
+  <table class="table table-dark table-striped">
+    <tr>
+      <td width="95">Work</td>
+      <td width="63">Date</td>
+      <td width="69">Description</td>
+      <td width="53">Type</td>
+      <td width="33">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.work}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.type}}</td>
+      <td>
+
+{% if  i.status == 'pending' %}
+    <a href="{% url 'prediction' id=i.id %}#about" class="btn btn-warning">prediction</a>
+        {% else %}
+        already applied
+        {% endif %}
+
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

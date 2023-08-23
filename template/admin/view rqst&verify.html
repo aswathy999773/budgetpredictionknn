@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'searchwithdate' %}#about">
+  <table width="332" height="143" border="1"  class="table table-dark table-hover"  align="center">
+    <tr>
+      <td colspan="5">Date:
+        <label>
+          <input type="date" name="textfield" required class="form-control"/>
+        </label>
+                <input type="submit" name="Submit" value="search" class="btn btn-secondary"/>
+</td>
+    </tr>
+    <tr>
+      <td>Contractor</td>
+      <td>Work</td>
+      <td>Date</td>
+      <td></td>
+    </tr>
+     {% for i in val %}
+  <tr>
+    <td>{{i.cid.name}}</td>
+    <td>{{i.wid.work}}</td>
+    <td>{{i.date}}</td>
+    <td> {% if i.status == 'pending' %}
+      <p><a href="{%  url 'workrqst' id=i.id %}#about" class="btn btn-secondary">accept</a></p>
+      <p><a href=" {%  url 'workreject' id=i.id %}#about" class="btn btn-light" >reject</a></p>
+      {% elif i.status == 'reject' %}REJECTED
+      {% else %}
+      ACCEPTED
+      {% endif %}</td>
+  </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

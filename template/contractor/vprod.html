@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title></head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="vprod1#about">
+  <table width="300" border="2"class="table table-dark table-striped">
+    <tr>
+      <td colspan="4">Supplier:
+        <select name="select" required>
+          <option value="">select</option>
+          {% for i in v %}
+          <option value="{{i.id}}" {% if i.id == p %}selected{% endif %}>{{i.name}} </option>
+          {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="Search" /></td>
+    </tr>
+    <tr>
+      <td>Product</td>
+      <td><strong>Description</strong></td>
+        <td><strong>Price</strong></td>
+        <td><strong>Quantity</strong></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td><label>{{i.details}}</label></td>
+            <td><label>{{i.price}}</label></td>
+            <td><label>{{i.qty}}</label></td>
+    </tr>
+     {% endfor %}
+
+  </table>
+</form>
+
+</body>
+<!--</html>-->
+{% endblock %}

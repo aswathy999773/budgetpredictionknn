@@ -1,0 +1,24 @@
+{% extends 'supindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="{% url 'chat_s' %}">
+  <div align="center">
+    <table width="255" border="1" align="center" class="table table-dark table-striped">
+    <input type="hidden" name="toid" value="{{fr}}"/>
+    <tr align="center">
+      <th class="blue" width="245" scope="col">{{fname}} </th>
+    </tr>
+    {% for d in data %}
+    <tr  {% if fr == d.tid.id %} align="left" {% else %} align="right" {% endif %} >
+      <td class="blue" height="84" scope="row" >{{d.msg}}         </td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th scope="row"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="30" rows="2" align="left" required></textarea>
+      <input type="submit" name="button" id="button" value="send" class="btn btn-secondary"/></th>
+    </tr>
+
+  </table>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!--!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'workcode' %}#about" bgcolor="secondary">
+  <table class="table table-dark table-hover" style="width:600px;" align="center">
+    <tr>
+      <th width="25" scope="row"><div align="left">Work</div></th>
+      <td width="250"><input type="text" name="textfield" class="form-control " required  pattern="[A-Z a-z.]{5,}"/></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Description</div></th>
+      <td><textarea name="textfield2"class="form-control " required ></textarea></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Type</div></th>
+      <td><input type="text" name="textfield3" class="form-control "required  pattern="[A-Z a-z. 0-9 ]{3,30}"/></td>
+    </tr>
+     <tr>
+      <th scope="row"><div align="left">Area of construction</div></th>
+      <td><input type="text" name="textfield4" class="form-control "required  pattern="[A-Z a-z. 0-9 ]{3,30}"/></td>
+    </tr>
+    <tr align="center">
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Add" class="btn btn-warning"/></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

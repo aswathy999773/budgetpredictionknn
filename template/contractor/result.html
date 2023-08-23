@@ -1,0 +1,26 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+ <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <h3>Prediction Result</h3>
+  <table class="table" align="center">
+    <tr>
+      <td><div align="center">Prediction Result </div></td>
+    </tr>
+    <tr>
+      <td>It seems to be like predicted amount {{val}}</td>
+<td>
+        <a href="{% url 'workrequest' id=rid %}#about" class="btn btn-warning">Send Request</a>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

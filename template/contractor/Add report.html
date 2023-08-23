@@ -1,0 +1,36 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'reports' %}#about" enctype="multipart/form-data">
+  <table class="table table-dark table-striped" style="width:600px;" align="center">
+    <tr>
+      <td>Report</td>
+      <td>work</td>
+      <td>Date</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td><a href="../media/{{i.report}}"><img src="../media/{{i.report}}" width="100" height="100"/></a> </td>
+      <td>{{i.wid.work}}</td>
+      <td>{{i.date}}</td>
+      <td><p><a href="{% url 'deletedreport' id=i.id %}#about" class="btn btn-light">Delete</a></p>
+      <p><a href="{% url 'editreport' id=i.id %}#about" class="btn btn-secondary">Edit</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4"><div align="center">
+        <input type="submit" name="Submit" value="Add" class="btn btn-warning"/>
+      </div></td>
+    </tr>
+  </>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

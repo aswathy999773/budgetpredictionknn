@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'addofficer' %}#about">
+  <table class="table table-dark table-striped">
+    
+    <tr>
+      <th width="132" scope="row">Name</th>
+      <td width="71">Address</td>
+            <td width="71">Department</td>
+
+      <td width="84">Phone no: </td>
+      <td width="130">Email</td>
+      <td width="131"><p><a href="#"></a><a href="#"></a></p>      </td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.fname}}  {{i.lname}}</td>
+      <td>{{i.place}}<br> {{i.postoffice}} <br>{{i.district}}<br>{{i.pin}}</td>
+            <td>{{i.department}}</td>
+      <td>{{i.phoneno}}</td>
+      <td>{{i.email}}</td>
+      <td width="131"><p><a href="{% url 'editofficer' id=i.id %}#about" class="btn btn-secondary">Edit</a></p>
+      <p><a href="{% url 'deletedofficer' id=i.lid.id %}#about" class="btn btn-light">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center">
+        <input type="submit" name="Submit" value="Add" class="btn btn-warning" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

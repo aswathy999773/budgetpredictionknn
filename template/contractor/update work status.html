@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="( % url 'update' %}#about">
+  <table class="table table-dark table-striped">
+    <tr>
+      <td>Work</td>
+      <td>Date</td>
+      <td><p>Status</p>      </td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.wid.work}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.status}}</td>
+      <td>
+
+
+
+
+        {% if i.status == 'pending' %}
+        <a href="{% url 'update' id=i.id %}#about" hidden >update</a>
+        {% elif i.status == 'reject'%}
+        <a href="{% url 'update' id=i.id %}#about" hidden >update</a>
+        {% else %}
+        <a href="{% url 'update' id=i.id %}#about" >update</a>
+
+        {% endif %}
+
+
+      </td>
+    </tr>
+    {% endfor %}
+    
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

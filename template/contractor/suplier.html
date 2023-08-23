@@ -1,0 +1,28 @@
+{% extends 'contractorindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="434" border="2" class="table table-dark table-striped"  align="center">
+    <tr>
+      <th width="40" scope="row">Supplier Name</th>
+      <td width="161"><strong>Address</strong></td>
+      <td width="45"><strong>Phone no: </strong></td>
+      <td></td>
+    </tr>
+    {% for i in v %}
+    <tr>
+      <td scope="row">{{i.name}}</td>
+      <td>{{i.place}}<br>{{i.postoffice}}<br>{{i.district}}&nbsp;</td>
+      <td>{{i.phoneno}}&nbsp;</td>
+      <td>
+        <p><a href="{%  url 'chat11' id=i.lid.id %}#about" class="btn btn-secondary">Chat</a></p>
+
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

@@ -1,0 +1,36 @@
+<!--!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>-->
+{% extends 'supindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="{% url 'addprod1' %}#about" bgcolor="secondary">
+  <table class="table table-dark table-hover" style="width:600px;" align="center">
+    <tr>
+      <th width="25" scope="row"><div align="left">Product</div></th>
+      <td width="250"><input type="text" name="textfield" class="form-control " required  /></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Details</div></th>
+      <td><textarea name="textfield2"class="form-control " required ></textarea></td>
+    </tr>
+    <tr>
+      <th scope="row"><div align="left">Price</div></th>
+      <td><input type="text" name="textfield3" class="form-control "required /></td>
+    </tr>
+     <tr>
+      <th scope="row"><div align="left">Quantity</div></th>
+      <td><input type="text" name="textfield4" class="form-control "required /></td>
+    </tr>
+    <tr align="center">
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="Add" class="btn btn-warning"/></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
